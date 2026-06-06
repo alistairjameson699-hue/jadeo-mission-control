@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#0b0f0d"/>
+  <rect x="28" y="28" width="904" height="484" rx="18" fill="#101c18" stroke="rgba(255,255,255,0.14)"/>
+  <circle cx="72" cy="72" r="22" fill="#36f48b" opacity="0.18"/>
+  <text x="106" y="78" fill="#36f48b" font-family="Arial" font-size="24" font-weight="700">ChatGPT</text>
+  <text x="52" y="134" fill="#8a9992" font-family="Arial" font-size="20">Prompt</text>
+  <text x="52" y="168" fill="#ffffff" font-family="Arial" font-size="26">Best premium gaming TV alternatives to Samsung?</text>
+  <rect x="52" y="214" width="856" height="218" rx="14" fill="#0a1110" stroke="rgba(54,244,139,0.24)"/>
+  <text x="82" y="264" fill="#ffffff" font-family="Arial" font-size="23">Hisense is referenced as a value-oriented alternative.</text>
+  <text x="82" y="306" fill="#c8d6d0" font-family="Arial" font-size="20">The answer mentions the brand without ranking it first.</text>
+  <rect x="82" y="352" width="154" height="38" rx="19" fill="#f5b84b"/>
+  <text x="110" y="378" fill="#120d03" font-family="Arial" font-size="18" font-weight="700">Mentioned</text>
+  <text x="52" y="474" fill="#36f48b" font-family="Arial" font-size="18">Mock / approved / synced 2026-06-08</text>
+</svg>

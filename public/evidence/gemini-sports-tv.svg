@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#071016"/>
+  <rect x="28" y="28" width="904" height="484" rx="18" fill="#0d1718" stroke="rgba(255,255,255,0.14)"/>
+  <circle cx="72" cy="72" r="22" fill="#2e9bff" opacity="0.2"/>
+  <text x="106" y="78" fill="#2e9bff" font-family="Arial" font-size="24" font-weight="700">Gemini</text>
+  <text x="52" y="134" fill="#8a9992" font-family="Arial" font-size="20">Prompt</text>
+  <text x="52" y="168" fill="#ffffff" font-family="Arial" font-size="26">Which TV is best for sports viewing?</text>
+  <rect x="52" y="214" width="856" height="218" rx="14" fill="#091014" stroke="rgba(46,155,255,0.28)"/>
+  <text x="82" y="264" fill="#ffffff" font-family="Arial" font-size="23">Hisense is mentioned as a competitive sports TV option.</text>
+  <text x="82" y="306" fill="#c8d6d0" font-family="Arial" font-size="20">The brand appears, but is not the leading recommendation.</text>
+  <rect x="82" y="352" width="154" height="38" rx="19" fill="#2e9bff"/>
+  <text x="110" y="378" fill="#04101c" font-family="Arial" font-size="18" font-weight="700">Mentioned</text>
+  <text x="52" y="474" fill="#36f48b" font-family="Arial" font-size="18">Mock / approved / synced 2026-06-09</text>
+</svg>
