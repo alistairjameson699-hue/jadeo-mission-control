@@ -94,5 +94,5 @@ export type DashboardData = {
   industryRankings: IndustryRanking[];
   cognitiveAssets: CognitiveAsset[];
   evidenceFeed: AiEvidence[];
-  summaryMetrics: DashboardSummaryMetric[];
+  summaryMetrics?: DashboardSummaryMetric[];
 };
