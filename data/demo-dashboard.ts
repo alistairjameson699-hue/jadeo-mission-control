@@ -39,6 +39,7 @@ export const demoDashboards: Record<string, DashboardData> = {
       brandDisplayName: "Hisense 海信",
       industry: "Consumer Electronics",
       logoLabel: "Hisense",
+      clientLeadName: "Zhang Wei",
       createdAt: "2026-06-01T09:00:00+08:00"
     },
     project: {
