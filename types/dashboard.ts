@@ -2,7 +2,7 @@ import type { DataMeta } from "@/types/data-source";
 
 export type Client = {
   id: string;
-  clientName: string;
+ clientLeadName?: string;
   brandName: string;
   brandDisplayName: string;
   industry: string;
