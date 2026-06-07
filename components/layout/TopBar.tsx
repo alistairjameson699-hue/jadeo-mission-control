@@ -1,4 +1,4 @@
-import { Bell, CalendarDays, ChevronDown } from "lucide-react";
+import { Bell, CalendarDays, ChevronDown, LogOut } from "lucide-react";
 import type { Client, Project } from "@/types/dashboard";
 
 function formatDateTime(value: string) {
@@ -44,6 +44,15 @@ export function TopBar({
           <span className="text-sm text-white">{client.brandDisplayName}</span>
           <ChevronDown className="h-4 w-4 text-jadeo-muted" />
         </div>
+        <form action="/api/auth/logout" method="post">
+          <button
+            type="submit"
+            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/76 transition hover:border-jadeo-green/40 hover:text-jadeo-green"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </button>
+        </form>
       </div>
     </header>
   );
