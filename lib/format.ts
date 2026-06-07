@@ -1,4 +1,3 @@
-// Shared display formatting helpers.
 export function formatDateTime(value: string) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",

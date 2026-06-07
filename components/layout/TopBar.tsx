@@ -1,6 +1,14 @@
 import { Bell, CalendarDays, ChevronDown } from "lucide-react";
-import { formatDateTime } from "@/lib/format";
 import type { Client, Project } from "@/types/dashboard";
+
+function formatDateTime(value: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
+  }).format(new Date(value));
+}
 
 export function TopBar({
   client,

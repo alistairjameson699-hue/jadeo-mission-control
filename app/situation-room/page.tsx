@@ -7,13 +7,24 @@ import { RankingFrame } from "@/components/dashboard/RankingFrame";
 import { SectionCard } from "@/components/dashboard/SectionCard";
 import { TrendFrame } from "@/components/dashboard/TrendFrame";
 import { getDashboardData } from "@/lib/dashboard";
+import type { DashboardSource } from "@/adapters/types";
+
+const dashboardSources: DashboardSource[] = ["mock", "manual", "export", "profound", "supabase"];
+
+function normalizeSource(source?: string): DashboardSource {
+  if (dashboardSources.includes(source as DashboardSource)) {
+    return source as DashboardSource;
+  }
+
+  return "mock";
+}
 
 export default async function SituationRoomPage({
   searchParams
 }: {
-  searchParams?: { clientId?: string };
+  searchParams?: { clientId?: string; source?: string };
 }) {
-  const data = await getDashboardData(searchParams?.clientId);
+  const data = await getDashboardData(searchParams?.clientId, normalizeSource(searchParams?.source));
   const summaryMetrics = data.summaryMetrics ?? [];
 
   return (
@@ -52,19 +63,14 @@ export default async function SituationRoomPage({
         </SectionCard>
       </div>
       <div className="mt-5 rounded-xl border border-jadeo-green/20 bg-jadeo-green/10 px-7 py-6">
-       <div className="mt-5 rounded-xl border border-jadeo-green/20 bg-jadeo-green/10 px-7 py-6">
-  <div className="grid grid-cols-4 gap-8 text-sm">
-    {summaryMetrics.map((metric) => (
-      <div key={metric.label}>
-        <p className="text-jadeo-muted">{metric.label}</p>
-        <p className="mt-2 text-2xl text-white">{metric.value}</p>
-        {metric.delta ? (
-          <p className="mt-1 text-xs text-jadeo-green">{metric.delta}</p>
-        ) : null}
-      </div>
-    ))}
-  </div>
-</div>
+        <div className="grid grid-cols-4 gap-8 text-sm">
+          {summaryMetrics.map((metric) => (
+            <div key={metric.sourceRecordId}>
+              <p className="text-jadeo-muted">{metric.label}</p>
+              <p className="mt-2 text-2xl text-white">{metric.value}</p>
+              <p className="mt-1 text-xs text-jadeo-green">{metric.detail}</p>
+            </div>
+          ))}
         </div>
       </div>
     </AppShell>

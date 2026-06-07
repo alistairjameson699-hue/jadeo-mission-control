@@ -1,5 +1,8 @@
 import type { IndustryRanking } from "@/types/dashboard";
-import { percent } from "@/lib/format";
+
+function percent(value: number) {
+  return `${value}%`;
+}
 
 export function RankingFrame({ rankings }: { rankings: IndustryRanking[] }) {
   return (
