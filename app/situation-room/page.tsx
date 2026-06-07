@@ -14,6 +14,7 @@ export default async function SituationRoomPage({
   searchParams?: { clientId?: string };
 }) {
   const data = await getDashboardData(searchParams?.clientId);
+  const summaryMetrics = data.summaryMetrics ?? [];
 
   return (
     <AppShell client={data.client}>
@@ -51,23 +52,19 @@ export default async function SituationRoomPage({
         </SectionCard>
       </div>
       <div className="mt-5 rounded-xl border border-jadeo-green/20 bg-jadeo-green/10 px-7 py-6">
-        <div className="grid grid-cols-4 gap-8 text-sm">
-          <div>
-            <p className="text-jadeo-muted">ChatGPT recommendation rate</p>
-            <p className="mt-2 text-2xl text-white">+214%</p>
-          </div>
-          <div>
-            <p className="text-jadeo-muted">Core cognitive assets</p>
-            <p className="mt-2 text-2xl text-white">2 newly occupied</p>
-          </div>
-          <div>
-            <p className="text-jadeo-muted">AI mentions</p>
-            <p className="mt-2 text-2xl text-white">1,238</p>
-          </div>
-          <div>
-            <p className="text-jadeo-muted">Positive evidence ratio</p>
-            <p className="mt-2 text-2xl text-white">78.6%</p>
-          </div>
+       <div className="mt-5 rounded-xl border border-jadeo-green/20 bg-jadeo-green/10 px-7 py-6">
+  <div className="grid grid-cols-4 gap-8 text-sm">
+    {summaryMetrics.map((metric) => (
+      <div key={metric.label}>
+        <p className="text-jadeo-muted">{metric.label}</p>
+        <p className="mt-2 text-2xl text-white">{metric.value}</p>
+        {metric.delta ? (
+          <p className="mt-1 text-xs text-jadeo-green">{metric.delta}</p>
+        ) : null}
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </div>
     </AppShell>
