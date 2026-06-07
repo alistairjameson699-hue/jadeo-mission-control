@@ -7,6 +7,7 @@ export type Client = {
   brandDisplayName: string;
   industry: string;
   logoLabel: string;
+  clientLeadName: string;
   createdAt: string;
 };
 
