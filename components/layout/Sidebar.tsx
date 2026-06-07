@@ -51,7 +51,7 @@ export function Sidebar({ client }: { client: Client }) {
         <p className="mt-1 text-sm text-white">{client.industry}</p>
         <div className="my-4 h-px bg-white/10" />
         <p className="text-xs text-jadeo-muted">Client Lead</p>
-        <p className="mt-2 text-sm text-white">Zhang Wei</p>
+        <p className="mt-2 text-sm text-white">{client.clientLeadName ?? "Jadeo Client Success"}</p>
       </div>
     </aside>
   );
