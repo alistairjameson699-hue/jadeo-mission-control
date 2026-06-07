@@ -2,12 +2,12 @@ import type { DataMeta } from "@/types/data-source";
 
 export type Client = {
   id: string;
- clientLeadName?: string;
+  clientName: string;
   brandName: string;
   brandDisplayName: string;
   industry: string;
   logoLabel: string;
-  clientLeadName: string;
+  clientLeadName?: string;
   createdAt: string;
 };
 
@@ -72,6 +72,20 @@ export type AiEvidence = DataMeta & {
   evidenceDate: string;
 };
 
+export type DashboardSummaryMetric = DataMeta & {
+  label: string;
+  value: string;
+  detail: string;
+};
+
+/**
+ * Standard Jadeo dashboard view model.
+ *
+ * Frontend components must only consume this normalized shape. They must not
+ * read Profound raw fields, CSV column names, Supabase table rows, or any
+ * client-specific field. Future source adapters should map their input into
+ * DashboardData first, then the UI can switch clients by changing clientId only.
+ */
 export type DashboardData = {
   client: Client;
   project: Project;
@@ -80,4 +94,5 @@ export type DashboardData = {
   industryRankings: IndustryRanking[];
   cognitiveAssets: CognitiveAsset[];
   evidenceFeed: AiEvidence[];
+  summaryMetrics: DashboardSummaryMetric[];
 };
